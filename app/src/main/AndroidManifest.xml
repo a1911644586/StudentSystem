@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddStudent" />
-        <activity android:name=".StudentSearch"></activity>
+        <activity android:name=".StudentSearch" />
+        <activity android:name=".ShowActivity"></activity>
     </application>
 
 </manifest>

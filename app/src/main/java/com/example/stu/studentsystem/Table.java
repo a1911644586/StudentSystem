@@ -1,7 +1,7 @@
 package com.example.stu.studentsystem;
 
 public class Table {
-    public static final String STUDENT_TABLE = "student";
+    public static final String STUDENT_TABLE = "studentScore";
     public static final class StudentColumns {
         public static final String ID = "_id";
         public static final String NAME = "name";

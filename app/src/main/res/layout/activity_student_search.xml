@@ -10,12 +10,13 @@
         android:layout_height="wrap_content"
         android:hint="请输入学员姓名"
         android:inputType="textPersonName" />
+
     <Button
-        android:id="@+id/bn_sure_search"
-        android:gravity="center"
+        android:id="@+id/bn_sure"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="确定"         />
+        android:gravity="center"
+        android:text="确定" />
     <Button
         android:id="@+id/bn_return"
         android:gravity="center"
