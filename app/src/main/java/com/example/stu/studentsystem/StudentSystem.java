@@ -1,6 +1,8 @@
 package com.example.stu.studentsystem;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,10 +20,11 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-public class StudentSystem extends ListActivity implements View.OnClickListener ,AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
+public class StudentSystem extends ListActivity implements View.OnClickListener , AdapterView.OnItemLongClickListener {
     private Button addButton,searchButton,selectButton,deleteButton,canleButton,selectAllButton;
     private RelativeLayout relativeLayout;
     private LinearLayout linearLayout;
@@ -46,16 +49,19 @@ public class StudentSystem extends ListActivity implements View.OnClickListener 
         linearLayout = findViewById(R.id.showLiner);
         relativeLayout = findViewById(R.id.RelativeLayout);
         list = new ArrayList<Long>();
-        Student student = new Student();
+        student = new Student();
         listView = getListView();
-        registerForContextMenu(getListView());
+
         addButton.setOnClickListener(this);
         searchButton.setOnClickListener(this);
         selectButton.setOnClickListener(this);
         deleteButton.setOnClickListener(this);
         canleButton.setOnClickListener(this);
         selectAllButton.setOnClickListener(this);
-
+        //listView.setOnItemClickListener(this);
+        listView.setOnItemLongClickListener(this);
+        listView.setOnCreateContextMenuListener(this);
+        //registerForContextMenu(getListView());
     }
     public void onClick(View v){
         if(v==addButton){
@@ -97,17 +103,13 @@ public class StudentSystem extends ListActivity implements View.OnClickListener 
     public boolean onContextItemSelected(MenuItem item) {
         int item_id = item.getItemId();
         student = (Student) listView.getTag();
-        //final long student_id = student.getId();
+        //final long stu_id = student.getId();
         Intent intent = new Intent();
+       // Log.i("id","id"+stu_id);
         switch (item_id) {
-            /* 添加
-            case R.id.add:
-                startActivity(new Intent(this, AddStudentActivity.class));
-                break;*/
-            // 删除
-            /*case R.id.delete:
-                //deleteStudentInformation(student_id);
-                break;*/
+            case R.id.delete:
+               // deleteStudent(stu_id);
+                break;
             case R.id.look:
                 // 查看学生信息
                 intent.putExtra("student", student);
@@ -128,14 +130,16 @@ public class StudentSystem extends ListActivity implements View.OnClickListener 
 
 
     @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        Student student = (Student) adapter.getStudentView(view, id);
+    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id)
+    {
+        Student student = (Student) adapter.getStudent(view, id);
         listView.setTag(student);
         registerForContextMenu(listView);
-        return true;
+        return false;
     }
 
-    @Override
+
+   /* @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (!isDeleteList) {
             student = adapter.getStudentView(view, id);
@@ -148,6 +152,36 @@ public class StudentSystem extends ListActivity implements View.OnClickListener 
             box.setChecked(!box.isChecked());
             list.add(id);
         }
+    }*/
+
+
+    private void deleteStudent(final long delete_id) {
+        // 利用对话框的形式删除数据
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("学员信息删除")
+                .setMessage("确定删除所选记录?")
+                .setCancelable(false)
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        int raws = adapter.deleteStudentById(delete_id);
+                        linearLayout.setVisibility(View.GONE);
+                        isDeleteList = !isDeleteList;
+                        load();
+                        if (raws > 0) {
+                            Toast.makeText(StudentSystem.this, "删除成功!",
+                                    Toast.LENGTH_LONG).show();
+                        } else
+                            Toast.makeText(StudentSystem.this, "删除失败!",
+                                    Toast.LENGTH_LONG).show();
+                    }
+                })
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
 

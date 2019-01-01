@@ -19,7 +19,7 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
     private EditText et_name,et_grade,et_profession,et_score;
     private String sex;
     private StudentAdapter adapter;
-    private Long stu_id;
+    private long stu_id;
     private RadioGroup radioGroup;
     private RadioButton rdt1,rdt2;
     private boolean isAdd = true;
@@ -74,6 +74,7 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
     }
     //获取输入的学生数据
     private Student getStudent() {
+
         String name = et_name.getText().toString();
         String grade =et_grade.getText().toString();
         String sex = ((RadioButton) findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
