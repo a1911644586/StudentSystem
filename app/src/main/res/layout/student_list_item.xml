@@ -5,6 +5,11 @@
     android:layout_height="wrap_content"
     android:layout_weight="1"
     >
+    <ImageView android:layout_width="fill_parent"
+        android:layout_height="130px"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        />
     <TextView android:id="@+id/tv_stu_id"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -13,23 +18,18 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
-    <TextView android:id="@+id/tv_stu_age"
+
+    <TextView
+        android:id="@+id/tv_stu_grade"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
-    <TextView android:id="@+id/tv_stu_sex"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+
     <TextView android:id="@+id/tv_stu_profession"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
     <TextView android:id="@+id/tv_stu_score"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-    <TextView android:id="@+id/tv_stu_traindate"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" />

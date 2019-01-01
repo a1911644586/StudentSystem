@@ -60,30 +60,30 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_stu_text_id" />
 
     <TextView
-        android:id="@+id/tv_age"
+        android:id="@+id/tv_grade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="年龄："
+        android:text="年级："
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/et_age"
+        app:layout_constraintEnd_toStartOf="@+id/et_grade"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <EditText
-        android:id="@+id/et_age"
+        android:id="@+id/et_grade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
         android:ems="10"
-        android:hint="   请输入年龄"
+        android:hint="   请输入年级"
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_age"
+        app:layout_constraintStart_toEndOf="@+id/tv_grade"
         app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
     <RadioGroup
@@ -95,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tv_sex"
-        app:layout_constraintTop_toBottomOf="@+id/et_age">
+        app:layout_constraintTop_toBottomOf="@+id/et_grade">
 
         <RadioButton
             android:id="@+id/rdb_male"
@@ -125,7 +125,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_age" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_grade" />
 
     <TextView
         android:id="@+id/tv_score"

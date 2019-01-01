@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-    <TextView android:id="@+id/tv_stu_age"
+    <TextView android:id="@+id/tv_stu_grade"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
@@ -29,10 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_weight="1" />
     <TextView android:id="@+id/tv_stu_score"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-    <TextView android:id="@+id/tv_stu_traindate"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" />

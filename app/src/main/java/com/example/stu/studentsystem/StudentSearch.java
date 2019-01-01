@@ -52,21 +52,22 @@ public class StudentSearch extends AppCompatActivity implements View.OnClickList
             } else
                 //如果有所查询的信息，则将查询结果显示出来
                 findadapter = new SimpleCursorAdapter(this, R.layout.student_find_list_item,
-                        cursor, new String[] { Table.StudentColumns.ID,
+                        cursor, new String[] {
+                        Table.StudentColumns.ID,
                         Table.StudentColumns.NAME,
-                        Table.StudentColumns.AGE,
+                        Table.StudentColumns.GRADE,
                         Table.StudentColumns.SEX,
                         Table.StudentColumns.PROFESSION,
-                        Table.StudentColumns.SCORE,
-                        Table.StudentColumns.TRAIN_DATE },
+                        Table.StudentColumns.SCORE
+                },
                         new int[] {
                                 R.id.tv_stu_id,
                                 R.id.tv_stu_name,
-                                R.id.tv_stu_age,
+                                R.id.tv_stu_grade,
                                 R.id.tv_stu_sex,
                                 R.id.tv_stu_profession,
-                                R.id.tv_stu_score,
-                                R.id.tv_stu_traindate });
+                                R.id.tv_stu_score
+                        });
             listView.setAdapter(findadapter);
         }else if(v==reButton|v==returnButton){
             finish();
