@@ -17,9 +17,9 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
     private TextView id;
     private Button btn_reset,btn_save;
     private EditText et_name,et_grade,et_profession,et_score;
-    private String sex;
+
     private StudentAdapter adapter;
-    private long stu_id;
+    private long stuId;
     private RadioGroup radioGroup;
     private RadioButton rdt1,rdt2;
     private boolean isAdd = true;
@@ -40,7 +40,7 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
         btn_save=findViewById(R.id.btn_save);
         btn_reset.setOnClickListener(this);
         btn_save.setOnClickListener(this);
-
+        isAdd();
     }
 
     public void onClick(View v){
@@ -83,7 +83,7 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
         Student student=new Student(name, grade, sex, profession, score);
         if (!isAdd) {
             student.setId(Integer.parseInt(id.getText().toString()));
-            adapter.deleteStudentById(stu_id);
+            adapter.deleteStudentById(stuId);
         }
 
         return student;
@@ -98,17 +98,17 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
         }else{
             isAdd = false;
             Student student = (Student) serializable;
-            updata(student);
+            updataStudent(student);
         }
     }
     //更新数据
-    public void updata(Student student){
-        stu_id = student.getId();
+    public void updataStudent(Student student){
+        stuId = student.getId();
         String name = student.getName();
         String grade = student.getGrade();
         String profession = student.getProfession();
         String score = student.getScore();
-        id.setText(stu_id + "");
+        id.setText(stuId + "");
         et_name.setText(name + "");
         et_grade.setText(grade + "");
         et_profession.setText(profession + "");

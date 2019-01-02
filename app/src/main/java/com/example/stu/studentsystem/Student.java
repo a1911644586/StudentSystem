@@ -12,17 +12,24 @@ public class Student implements Serializable {
     public Student() {
         super();
     }
-    public Student(long id, String name, String grade, String sex, String profession, String score) {
+    public Student(long id,String name, String grade, String profession, String score) {
         super();
-        this.id = id;
+        this.name = name;
+        this.grade = grade;
+        this.profession = profession;
+        this.score = score;
+    }
+    public Student(String name, String grade, String sex, String profession, String score) {
+        super();
         this.name = name;
         this.grade = grade;
         this.sex = sex;
         this.profession = profession;
         this.score = score;
     }
-    public Student(String name, String grade, String sex, String profession, String score) {
+    public Student(long id, String name, String grade, String sex, String profession, String score) {
         super();
+        this.id = id;
         this.name = name;
         this.grade = grade;
         this.sex = sex;
