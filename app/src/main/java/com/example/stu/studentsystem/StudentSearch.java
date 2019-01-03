@@ -24,12 +24,12 @@ public class StudentSearch extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_search);
-        nameText =  findViewById(R.id.et_srarch);
-        layout= findViewById(R.id.linersearch);
-        button =  findViewById(R.id.bn_sure);
-        reButton =  findViewById(R.id.bn_return);
-        listView =  findViewById(R.id.searchListView);
-        returnButton =  findViewById(R.id.return_id);
+        nameText = (EditText) findViewById(R.id.et_srarch);
+        layout=(LinearLayout) findViewById(R.id.linersearch);
+        button = (Button) findViewById(R.id.bn_sure);
+        reButton = (Button) findViewById(R.id.bn_return);
+        listView = (ListView) findViewById(R.id.searchListView);
+        returnButton = (Button) findViewById(R.id.return_id);
         adapter = new StudentAdapter(new StudentDBHelper(this));
 
 
@@ -74,4 +74,5 @@ public class StudentSearch extends AppCompatActivity implements View.OnClickList
         }
     }
 }
+
 

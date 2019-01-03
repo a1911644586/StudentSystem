@@ -21,7 +21,8 @@
         <activity android:name=".ShowActivity" />
         <activity android:name=".StudentSystem" />
         <activity android:name=".login.admin_login_activity" />
-        <activity android:name=".login.admin_activity"></activity>
+        <activity android:name=".login.admin_activity" />
+        <activity android:name=".updataActivity"></activity>
     </application>
 
 </manifest>

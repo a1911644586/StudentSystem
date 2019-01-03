@@ -2,74 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <RelativeLayout android:id="@+id/RelativeLayout"
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
-        <Button android:id="@+id/btn_query"
+
+        <Button
+            android:id="@+id/btn_query"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="搜索"
-            android:gravity="center_vertical" />
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical"
+            android:text="搜索" />
 
         <Button
             android:id="@+id/btn_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/btn_select"
+            android:layout_marginLeft="188dp"
+            android:layout_marginTop="0dp"
             android:layout_toRightOf="@+id/btn_query"
             android:gravity="center"
             android:text="添加学员信息" />
-        <Button  android:gravity="center_vertical"
-            android:text="选择"
-            android:id="@+id/btn_select"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"></Button>
+
     </RelativeLayout>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="        ID            姓 名                年 龄         性 别        "
+        android:text="        ID               姓 名           科 目           年 级             成 绩     "
         />
 
     <ListView
-
         android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:id="@+id/showLiner"
-        android:visibility="gone"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
-
-        <Button
-            android:id="@+id/btn_delete"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:enabled="false"
-            android:text="删除" />
-
-        <Button
-            android:id="@+id/btn_selectall"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="全选" />
-
-        <Button
-            android:id="@+id/btn_canel"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="取消" />
-    </LinearLayout>
 </LinearLayout>

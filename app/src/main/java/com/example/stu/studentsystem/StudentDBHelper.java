@@ -20,7 +20,7 @@ public class StudentDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table "
                 + Table.STUDENT_TABLE                 + "(_id Integer primary key AUTOINCREMENT,"
-                + "name char,grade char, sex char, profession char, score char)");     }
+                + "name char,grade integer, sex char, profession char, score char)");     }
     //更新数据库
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
