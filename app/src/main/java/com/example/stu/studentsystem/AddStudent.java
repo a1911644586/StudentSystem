@@ -38,10 +38,8 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
         rdt2=findViewById(R.id.rdb_female);
         adapter = new StudentAdapter(new StudentDBHelper(this));
         btn_reset=findViewById(R.id.btn_reset);
-        btn_updata=findViewById(R.id.btn_updata);
-        btn_save=findViewById(R.id.btn_updata);
+        btn_save=findViewById(R.id.btn_save);
         btn_reset.setOnClickListener(this);
-        btn_updata.setOnClickListener(this);
         btn_save.setOnClickListener(this);
         isAdd();
     }
